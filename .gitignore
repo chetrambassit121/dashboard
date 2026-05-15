@@ -111,6 +111,6 @@ dist/
 *.tmp
 *.temp
 
-
-notes.txt
+.notes
+notes
 .notes.txt
