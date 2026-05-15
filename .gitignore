@@ -1,0 +1,116 @@
+# ==========================================
+# Django / Django REST / React .gitignore
+# ==========================================
+
+# ------------------------------------------
+# Python
+# ------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------
+# Virtual Environment
+# ------------------------------------------
+venv/
+env/
+ENV/
+.venv/
+
+# ------------------------------------------
+# Django
+# ------------------------------------------
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Django static files
+staticfiles/
+static/
+
+# ------------------------------------------
+# Environment Variables
+# ------------------------------------------
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------
+# Pytest / Coverage
+# ------------------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+*.cover
+
+# ------------------------------------------
+# VS Code / IDE
+# ------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# ------------------------------------------
+# Node / React
+# ------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# React build folders
+build/
+dist/
+
+# Vite
+.vite/
+
+# ------------------------------------------
+# React Native / Expo (optional)
+# ------------------------------------------
+.expo/
+.expo-shared/
+
+# ------------------------------------------
+# MacOS
+# ------------------------------------------
+.DS_Store
+
+# ------------------------------------------
+# Heroku
+# ------------------------------------------
+.heroku/
+
+# ------------------------------------------
+# Misc
+# ------------------------------------------
+*.bak
+*.tmp
+*.temp
+
+
+notes.txt
+.notes.txt

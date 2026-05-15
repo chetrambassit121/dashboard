@@ -1,0 +1,33 @@
+create backend folder 
+create frontend folder 
+
+
+
+starting commands to setup backend 
+    python3 -m pip install virtualenv
+    python3 -m venv venv 
+
+activating virtual venv 
+    source venv/bin/activate
+
+installing django
+    python3 -m pip install Django
+
+install DRF
+    pip install djangorestframework
+    (after installing DRF app add it to dashboard/settings.py file 'rest_framework' )
+
+create project 
+    django-admin startproject dashboard .
+
+create an app 
+    python3 manage.py startapp data 
+    (after creating the data app add it to dashboard/settings.py file )
+    (
+        create a urls.py file in data app as well, 
+        then connect the urls.py file to dashboard.urls.py
+    )
+
+make migrations / migrate
+    python3 manage.py makemigrations
+    python3 manage.py migrate 

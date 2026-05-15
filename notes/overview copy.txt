@@ -1,0 +1,147 @@
+react native cli setup 
+    https://reactnative.dev/docs/environment-setup
+    https://reactnative.dev/docs/set-up-your-environment
+
+
+
+
+django setup:
+
+    Install virtual enviorment:
+
+        in RealtimeChat folder do this command to install virtualenv
+            brew install virtualenv 
+
+    Django virtual enviorment setup:
+
+        in RealtimeChat folder do one of these command to create a virtual environment
+            virtualenv -p python3 venv
+            python3 -m venv venv
+
+        in RealtimeChat folder do this command to activate the virtual enviorment
+            source venv/bin/activate
+
+            terminal will show (venv)
+                (venv) chetrambassit@Chetrams-Mac-mini RealtimeChat % 
+
+    Django installation:
+    
+        In RealtimeChat folder do this command to install django 
+            pip install django 
+
+
+    Create requirements.txt file to view packages installed 
+
+        pip freeze > requirements.txt 
+
+        update requirements.txt file 
+            pip freeze 
+
+    
+    create a django project 
+
+        django-admin startproject <project-name>
+        we will call this project core
+
+
+
+folders/files I created in react
+
+    AwesomeProject/scr/screens   (folder where our screens exist)
+    AwesomeProject/scr/assests   (folder is for static files)
+    AwesomeProject/scr/common    (folder for reusable components or utilities that are used across multiple screens)    
+    AwesomeProject/scr/core      (folder core is for app-wide logic and foundations, engine of the app not the UI)
+
+
+
+
+added logrocket for custom fonts taken from google fonts 
+    https://blog.logrocket.com/how-to-add-custom-fonts-react-native/
+    https://fonts.google.com/download/next-steps?query=lec
+
+
+
+added react-navigation 
+    What is React Navigation?
+        React Navigation is a powerful and widely used library for handling navigation in React Native applications. Navigation, in the context of mobile app development, involves moving between different screens or pages within the app. 
+        It plays a crucial role in providing users with seamless access to various functionalities and content, making it a fundamental aspect of building user-friendly mobile apps. 
+        Additionally, understanding Context in React helps in managing state across different screens efficiently.
+    https://reactnavigation.org/docs/getting-started/
+
+
+added font-awesome-icons
+    https://docs-v6.fontawesome.com/web/use-with/react-native
+
+
+added djangorestframework
+    a powerful toolkit for building Web APIs using Django.
+    DRF helps you turn your backend into an API so apps (like your React Native app) can talk to it.
+
+
+added djangorestframework-simplejwt
+    https://django-rest-framework-simplejwt.readthedocs.io/en/latest/index.html
+    a popular authentication library for Django REST Framework that lets your API use JWT (JSON Web Tokens) for login and authorization.
+
+
+added axios
+    https://axios-http.com/docs/intro
+    Axios in React Native is a library used to make HTTP requests — basically how your app talks to your backend (like your Django API).
+    Think of Axios as:
+        “The tool that sends and receives data between your app and your server”
+
+
+added zustand 
+    https://github.com/pmndrs/zustand
+    a lightweight state management library for React
+
+    Choose Zustand when you want something fast to set up, easy to read, and low-boilerplate for small-to-medium apps or straightforward shared state. 
+    Its hook-based approach avoids a lot of Redux ceremony.
+    
+    Choose Redux Toolkit when your app is growing, state logic is getting complex, multiple developers are touching the same state, 
+    or you want a more opinionated structure and predictable patterns. Redux Toolkit is the official recommended way to use Redux today. 
+
+
+added react native encrypted storage 
+    React Native Encrypted Storage is a library used to securely store sensitive data on a device in a React Native app.
+
+    It lets you store things like:
+        login credentials (tokens, passwords)
+        API keys
+        session data
+
+    …but instead of saving them as plain text, it encrypts them using the device’s secure storage systems:
+        iOS → Keychain
+        Android → Encrypted SharedPreferences / Keystore
+
+    👉 Encrypted storage protects against that:
+        data is encrypted at rest
+        tied to device security
+        harder to extract
+
+
+added react native image picker 
+    React Native Image Picker is a library that lets your app access a user’s photos or camera so they can select or take images/videos.
+
+    🧠 What it actually does
+        It gives your app the ability to:
+            Open the photo gallery
+            Launch the camera
+            Let the user pick or capture an image/video
+            Return that file back to your app (with URI, file name, type, etc.)
+
+    📸 Example flow
+        User taps “Upload Profile Picture”
+        Image picker opens (camera or gallery)
+        User selects/takes a photo
+        Your app gets the image data
+        You display or upload it
+
+
+    follow instructions here:
+        https://github.com/react-native-image-picker/react-native-image-picker
+
+
+
+added django channels
+    https://github.com/joshua-hashimoto/django-channels-jwt-auth-middleware
+    
