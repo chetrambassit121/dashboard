@@ -1,15 +1,19 @@
 import { React, useState, useEffect } from 'react'
 import AxiosInstance from './Axios'
+import MyPieChart from './charts/PieChart'
+import MyChartBox from './charts/ChartBox'
+import StoreIcon from '@mui/icons-material/Store';
+
 
 const Dashboard1 = () => {
 
-    const [myData, setMyData] = useState([])
-    console.log('myData: ', myData)
+    const [myBranchData, setMyBranchData] = useState([])
+    console.log('myBranchData: ', myBranchData)
 
     const GetData = async () => {
-        AxiosInstance.get(`supermarketsales/`)
+        AxiosInstance.get(`branchedata/`)
         .then((res) => {
-            setMyData(res.data)
+            setMyBranchData(res.data)
         })
     }
 
@@ -18,7 +22,15 @@ const Dashboard1 = () => {
     }, [])
 
     return(
-        <div>This is the Dashboard1</div>
+        <div>
+            <MyChartBox
+                icon1 = {<StoreIcon />}
+                title1 = {'My Chart 1'}
+                chart1 = {<MyPieChart 
+                        data={myBranchData}
+                        myData={myBranchData}/>}
+            />
+        </div>
     )
 }
 
