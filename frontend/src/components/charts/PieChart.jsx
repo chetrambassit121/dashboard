@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { PieChart, PieArcLabel } from '@mui/x-charts/PieChart';
+import { PieChart, PieArcLabel, PieArcLabelPlot } from '@mui/x-charts/PieChart';
 
 export default function MyPieChart({ myData }) {
   return (
@@ -13,7 +13,8 @@ export default function MyPieChart({ myData }) {
         },
       ]}
       sx={{
-        [`& .${PieArcLabel.MuiPieArcLabel-root}`]:{
+        // [`& .${PieArcLabel.MuiPieArcLabel-root}`]:{
+        [`& .${PieArcLabelPlot.root}`]:{
             fill: 'white', 
             fontSize: 14,
         }

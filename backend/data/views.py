@@ -41,79 +41,15 @@ class BrancheDataViewset(viewsets.ViewSet):
         return Response(serializer.data)
     
 
-# class GenderDataViewset(viewsets.ViewSet): 
-#     permission_classes = [permissions.AllowAny]
-#     queryset = SuperMarketSales.objects.all()
-#     serializer_class = GenderDataSerializer
+class GenderDataViewset(viewsets.ViewSet): 
+    permission_classes = [permissions.AllowAny]
+    queryset = SuperMarketSales.objects.all()
+    serializer_class = GenderDataSerializer
 
-#     def list(self, request): 
-#         queryset = SuperMarketSales.objects.values('gender', 'gender__name')\
-#                    .annotate(quantity=Sum('quantity'))
+    def list(self, request): 
+        queryset = SuperMarketSales.objects.values('gender', 'gender__name')\
+                   .annotate(quantity=Sum('quantity'))
         
-#         serializer = self.serializer_class(queryset, many=True)
-#         return Response(serializer.data)
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)
     
-# class ProductBrancheViewset(viewsets.ViewSet): 
-#     permission_classes = [permissions.AllowAny]
-#     queryset = SuperMarketSales.objects.all()
-#     serializer_class = ProductBrancheDataSerializer
-
-#     def list(self, request): 
-#         queryset = SuperMarketSales.objects.values('productline__name')\
-#                    .annotate(quantityBrancheA=Sum(
-#                        Case(
-#                            When(branche__name="A", then='quantity'),
-#                            default=0, 
-#                            output_field=IntegerField()
-#                        )
-#                    ))\
-#                    .annotate(quantityBrancheB=Sum(
-#                        Case(
-#                            When(branche__name="B", then='quantity'),
-#                            default=0, 
-#                            output_field=IntegerField()
-#                        )
-#                    ))\
-#                    .annotate(quantityBrancheC=Sum(
-#                        Case(
-#                            When(branche__name="C", then='quantity'),
-#                            default=0, 
-#                            output_field=IntegerField()
-#                        )
-#                    ))
-        
-#         serializer = self.serializer_class(queryset, many=True)
-#         return Response(serializer.data)
-    
-
-# class CountryDataViewet(viewsets.ViewSet): 
-#     permission_classes = [permissions.AllowAny]
-#     queryset = SuperMarketSales.objects.all()
-#     serializer_class = CountryDataSerializer
-
-#     def list(self, request): 
-#         queryset = SuperMarketSales.objects.values('date__month')\
-#                    .annotate(quantityNetherlands=Sum(
-#                        Case(
-#                            When(country__name="Netherlands", then='quantity'),
-#                            default=0, 
-#                            output_field=IntegerField()
-#                        )
-#                    ))\
-#                    .annotate(quantityGermany=Sum(
-#                        Case(
-#                            When(country__name="Germany", then='quantity'),
-#                            default=0, 
-#                            output_field=IntegerField()
-#                        )
-#                    ))\
-#                    .annotate(quantityFrance=Sum(
-#                        Case(
-#                            When(country__name="France", then='quantity'),
-#                            default=0, 
-#                            output_field=IntegerField()
-#                        )
-#                    ))
-        
-#         serializer = self.serializer_class(queryset, many=True)
-#         return Response(serializer.data)
