@@ -40,3 +40,19 @@ class GenderDataSerializer(serializers.Serializer):
     id = serializers.IntegerField(source='gender')
     label = serializers.CharField(source= 'gender__name')
     value = serializers.IntegerField(source='quantity')
+
+class ProductBrancheDataSerializer(serializers.Serializer): 
+    productline__name = serializers.CharField()
+    quantityBrancheA = serializers.IntegerField()
+    quantityBrancheB = serializers.IntegerField()
+    quantityBrancheC = serializers.IntegerField()
+
+class CountryDataSerializer(serializers.Serializer):
+    date__month = serializers.CharField()
+    quantityNetherlands = serializers.IntegerField()
+    quantityGermany = serializers.IntegerField()
+    quantityFrance = serializers.IntegerField()
+    month_name = serializers.SerializerMethodField()
+
+    def get_month_name(self,obj):
+        return calendar.month_name[obj['date__month']]
