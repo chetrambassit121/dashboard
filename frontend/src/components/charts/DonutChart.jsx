@@ -31,7 +31,7 @@ export default function MyDonutChart({data, centerlabel}) {
             data, 
             innerRadius: 50,
             arcLabel: (item) => `${item.value}`,
-            highlightScope: {faded:'global', highlighted: 'item'},
+            highlightScope: {fade:'global', highlighted: 'item'},
             faded: { innerRadius: 30, additionalRadius: -30, color:'gray'}
         }]} 
         sx={{

@@ -3,6 +3,22 @@ import { Grid, Box } from '@mui/material';
 
 export default function MyChartBox(props) {
   const {icon1, title1, chart1, icon2, title2, chart2, icon3, title3, chart3} = props
+  const chartStyles = {
+    marginBottom: '20px',
+
+    '& text': {
+        fill: 'white !important',
+    },
+
+    '& .MuiChartsLegend-label': {
+        color: 'white !important',
+        fill: 'white !important',
+    },
+
+    '& .MuiPieArcLabel-root': {
+        fill: 'white !important',
+    },
+    }
   return (
     <>
         <Grid container
@@ -10,7 +26,7 @@ export default function MyChartBox(props) {
         >
 
             <Grid
-                item xs={12} sm={12} md={6} lg={4}
+                xs={12} sm={12} md={6} lg={4}
                 sx={{minHeight: '200px', padding:'20px', borderRight: '1px dotted #d3d3d3'}}
             >
                 <Box sx={{marginBottom: '20px', fontWeight:'bold', display:'flex', flexDirection:'row', alignItems: 'center'}}> 
@@ -18,12 +34,29 @@ export default function MyChartBox(props) {
                     <Box>{title1}</Box>
                 </Box>
 
-                <Box sx={{marginBottom: '20px'}}>{chart1}</Box>
+                <Box 
+                sx={{
+                    marginBottom: '20px', 
+                    
+                    '& text': {
+                    fill: 'white !important',
+                    },
+
+                    '& .MuiChartsLegend-label': {
+                    color: 'white !important',
+                    fill: 'white !important',
+                    },
+
+                    '& .MuiPieArcLabel-root': {
+                    fill: 'white !important',
+                    },}}>
+                    {chart1}
+                </Box>
 
             </Grid>
 
             <Grid
-                item xs={12} sm={12} md={6} lg={4}
+                xs={12} sm={12} md={6} lg={4}
                 sx={{minHeight: '200px', padding:'20px', borderRight: '1px dotted #d3d3d3'}}
             >
                 <Box sx={{marginBottom: '20px', fontWeight:'bold', display:'flex', flexDirection:'row', alignItems: 'center'}}> 
@@ -31,12 +64,23 @@ export default function MyChartBox(props) {
                     <Box>{title2}</Box>
                 </Box>
 
-                <Box sx={{marginBottom: '20px'}}>{chart2}</Box>
+                <Box sx={{marginBottom: '20px', '& text': {
+                    fill: 'white !important',
+                    },
+
+                    '& .MuiChartsLegend-label': {
+                    color: 'white !important',
+                    fill: 'white !important',
+                    },
+
+                    '& .MuiPieArcLabel-root': {
+                    fill: 'white !important',
+                    }}}>{chart2}</Box>
 
             </Grid>
 
             <Grid
-                item xs={12} sm={12} md={6} lg={4}
+                xs={12} sm={12} md={6} lg={4}
                 sx={{minHeight: '200px', padding:'20px', borderRight: '1px dotted #d3d3d3'}}
             >
                 <Box sx={{marginBottom: '20px', fontWeight:'bold', display:'flex', flexDirection:'row', alignItems: 'center'}}> 
@@ -44,7 +88,18 @@ export default function MyChartBox(props) {
                     <Box>{title3}</Box>
                 </Box>
 
-                <Box sx={{marginBottom: '20px'}}>{chart3}</Box>
+                <Box sx={{marginBottom: '20px', '& text': {
+                    fill: 'white !important',
+                    },
+
+                    '& .MuiChartsLegend-label': {
+                    color: 'white !important',
+                    fill: 'white !important',
+                    },
+
+                    '& .MuiPieArcLabel-root': {
+                    fill: 'white !important',
+                    }}}>{chart3}</Box>
 
             </Grid>
 

@@ -22,10 +22,11 @@ export default function Navbar({content}) {
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
-            <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
+            <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1,  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                                            boxShadow: 'none',}}>
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
-                        Clipped drawer
+                        Data Visualization Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -34,14 +35,14 @@ export default function Navbar({content}) {
                 sx={{
                 width: drawerWidth,
                 flexShrink: 0,
-                [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+                [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', backgroundColor: 'rgba(0, 0, 0, 0.7)' }, 
                 }}
             >
             <Toolbar />
-            <Box sx={{ overflow: 'auto' }}>
+            <Box sx={{ overflow: 'auto', backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
 
                 <ListItem key={1} disablePadding>
-                <ListItemButton component={Link} to={"/"} selected={"/" === location.pathname} sx={{"&.Mui-selected": {backgroundColor: "#1976d2", color: "black",},}}>
+                <ListItemButton component={Link} to={"/"} selected={"/" === location.pathname} sx={{color: "white",}}>
                     <ListItemIcon>
                             <AutoGraphIcon />
                     </ListItemIcon>
@@ -50,7 +51,7 @@ export default function Navbar({content}) {
                 </ListItem>
 
                 <ListItem key={2} disablePadding>
-                <ListItemButton component={Link} to={"/dashboard2"} selected={"/dashboard2" === location.pathname} sx={{"&.Mui-selected": {backgroundColor: "#1976d2", color: "black",},}}>
+                <ListItemButton component={Link} to={"/dashboard2"} selected={"/dashboard2" === location.pathname} sx={{ color: "white"}}>
                     <ListItemIcon>
                             <AutoGraphIcon />
                     </ListItemIcon>
@@ -60,7 +61,7 @@ export default function Navbar({content}) {
 
             </Box>
         </Drawer>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box component="main" sx={{ flexGrow: 1, p: 3, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
             <Toolbar />
                 {content}
         </Box>

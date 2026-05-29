@@ -18,6 +18,9 @@ import WcIcon from '@mui/icons-material/Wc';
 import MyStackedBarChart from './charts/StackedBarChart';
 import CategoryIcon from '@mui/icons-material/Category';
 import PublicIcon from '@mui/icons-material/Public';
+import MyChartBox2 from './charts/ChartBox2';
+import MyLineChart from './charts/LineChart';
+import MyCombiChart from './charts/CombiChart';
 
 
 const Dashboard1 = () => {
@@ -26,10 +29,12 @@ const Dashboard1 = () => {
     // console.log('myBranchData: ', myBranchData)
     const [myGenderData, setMyGenderData] = useState([])
     // console.log('myGenderData: ', myGenderData)
-    const [MyProductBrancheData, setMyProductBrancheData] = useState([])
+    const [myProductBrancheData, setMyProductBrancheData] = useState([])
     const [myCountryData, setMyCountryData] = useState([])
+    console.log('myProductBrancheData: ', myProductBrancheData)
 
-    const GetData = async () => {
+
+    const GetData = () => {
         AxiosInstance.get(`branchedata/`)
         .then((res) => {
             setMyBranchData(res.data)
@@ -91,11 +96,31 @@ const Dashboard1 = () => {
                 icon3 = {<CategoryIcon/>}
                 title3 = {"Quantities per Productline & Branche"}
                 chart3={ <MyStackedBarChart
-                            dataset={MyProductBrancheData}
+                            dataset={myProductBrancheData}
                             XlabelName = {'productline__name'}
                             series = {myseries}
 
                         />}
+            />
+
+            <MyChartBox2
+                 icon1 = {<PublicIcon/>}
+                 title1 = {"Quantities per Month per Country"}
+                 chart1={ <MyLineChart
+                            mydata ={myCountryData} 
+                            myxaxis={"month_name"}
+                            myseries ={mycountryseries}
+                             />}
+
+                icon2 = {<PublicIcon/>}
+                title2 = {"Quantities per Product Line per Branch"}
+                chart2={ <MyCombiChart
+                            data={myProductBrancheData}
+                            myseries = {myproductbrancheseries}
+                            xcolumn = {'productline__name'}
+                            
+                        />}
+
             />
         
         </div>
