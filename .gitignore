@@ -115,3 +115,5 @@ dist/
 .notes
 notes
 .notes.txt
+.env
+backend/.env
