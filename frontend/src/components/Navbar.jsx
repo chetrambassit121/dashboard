@@ -55,7 +55,7 @@ export default function Navbar({content}) {
                     <ListItemIcon>
                             <AutoGraphIcon />
                     </ListItemIcon>
-                    <ListItemText primary={"Dashboard 2"} />
+                    <ListItemText primary={"About"} />
                 </ListItemButton>
                 </ListItem>
 

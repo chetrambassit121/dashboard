@@ -27,7 +27,7 @@ export default function MyChartBox(props) {
 
             <Grid
                 xs={12} sm={12} md={6} lg={4}
-                sx={{minHeight: '200px', padding:'20px', borderRight: '1px dotted #d3d3d3'}}
+                sx={{minHeight: '200px', padding:'20px'}}
             >
                 <Box sx={{marginBottom: '20px', fontWeight:'bold', display:'flex', flexDirection:'row', alignItems: 'center'}}> 
                     <Box sx={{marginRight: '15px'}}>{icon1}</Box>
@@ -57,7 +57,7 @@ export default function MyChartBox(props) {
 
             <Grid
                 xs={12} sm={12} md={6} lg={4}
-                sx={{minHeight: '200px', padding:'20px', borderRight: '1px dotted #d3d3d3'}}
+                sx={{minHeight: '200px', padding:'20px'}}
             >
                 <Box sx={{marginBottom: '20px', fontWeight:'bold', display:'flex', flexDirection:'row', alignItems: 'center'}}> 
                     <Box sx={{marginRight: '15px'}}>{icon2}</Box>
@@ -81,7 +81,7 @@ export default function MyChartBox(props) {
 
             <Grid
                 xs={12} sm={12} md={6} lg={4}
-                sx={{minHeight: '200px', padding:'20px', borderRight: '1px dotted #d3d3d3'}}
+                sx={{minHeight: '200px', padding:'20px'}}
             >
                 <Box sx={{marginBottom: '20px', fontWeight:'bold', display:'flex', flexDirection:'row', alignItems: 'center'}}> 
                     <Box sx={{marginRight: '15px'}}>{icon3}</Box>

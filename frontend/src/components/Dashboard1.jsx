@@ -26,9 +26,7 @@ import MyCombiChart from './charts/CombiChart';
 const Dashboard1 = () => {
 
     const [myBranchData, setMyBranchData] = useState([])
-    // console.log('myBranchData: ', myBranchData)
     const [myGenderData, setMyGenderData] = useState([])
-    // console.log('myGenderData: ', myGenderData)
     const [myProductBrancheData, setMyProductBrancheData] = useState([])
     const [myCountryData, setMyCountryData] = useState([])
     console.log('myProductBrancheData: ', myProductBrancheData)
@@ -112,14 +110,14 @@ const Dashboard1 = () => {
                             myseries ={mycountryseries}
                              />}
 
-                icon2 = {<PublicIcon/>}
-                title2 = {"Quantities per Product Line per Branch"}
-                chart2={ <MyCombiChart
-                            data={myProductBrancheData}
-                            myseries = {myproductbrancheseries}
-                            xcolumn = {'productline__name'}
+                // icon2 = {<PublicIcon/>}
+                // title2 = {"Quantities per Product Line per Branch"}
+                // chart2={ <MyCombiChart
+                //             data={myProductBrancheData}
+                //             myseries = {myproductbrancheseries}
+                //             xcolumn = {'productline__name'}
                             
-                        />}
+                //         />}
 
             />
         

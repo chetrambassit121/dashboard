@@ -10,6 +10,17 @@ import * as React from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
 
 export default function MyStackedBarChart({ dataset, XlabelName, series }) {
+  //   const chartSetting = {
+  //   xAxis: [
+  //     {
+  //       scaleType: 'band',
+  //       dataKey: XlabelName,
+  //     },
+  //   ],
+  //   height: 400,
+  //   margin: { left: 0 },
+  // };
+  const catdata = dataset.map((item) => item[XlabelName]);
   return (
       <BarChart
         dataset={dataset}
