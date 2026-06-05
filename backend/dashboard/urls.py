@@ -20,5 +20,6 @@ from django.urls import path, include   # importing include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('data.urls'))      # using include to get all urls from data app 
+    path('', include('data.urls')),      # using include to get all urls from data app 
+    path("", TemplateView.as_view(template_name="index.html")),
 ]
