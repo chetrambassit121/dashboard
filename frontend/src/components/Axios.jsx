@@ -1,14 +1,32 @@
+// import axios from 'axios'
+
+// const myURL = 'http://127.0.0.1:8000/'
+
+// const AxiosInstance = axios.create({
+//     baseURL: myURL, 
+//     timeout: 5000, 
+//     headers:{
+//         "Content-Type": "application/json",
+//         accept: "application/json"
+//     }
+// })
+
+// export default AxiosInstance
+
+
 import axios from 'axios'
 
-const myURL = 'http://127.0.0.1:8000/'
+const myURL = import.meta.env.PROD
+  ? 'https://chets-django-react-charts-41a8c2be6c20.herokuapp.com/api/'
+  : 'http://127.0.0.1:8000/api/'
 
 const AxiosInstance = axios.create({
-    baseURL: myURL, 
-    timeout: 5000, 
-    headers:{
-        "Content-Type": "application/json",
-        accept: "application/json"
-    }
+  baseURL: myURL,
+  timeout: 5000,
+  headers: {
+    "Content-Type": "application/json",
+    accept: "application/json",
+  },
 })
 
 export default AxiosInstance
