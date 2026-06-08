@@ -29,9 +29,20 @@ application = get_wsgi_application()
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-# application = WhiteNoise(application)
-# application.add_files(BASE_DIR / "frontend" / "dist", prefix="static/")
+
 
 application = WhiteNoise(application)
 application.add_files(BASE_DIR / "frontend" / "dist", prefix="static/")
 application.add_files(BASE_DIR / "backend" / "staticfiles", prefix="static/")
+application.add_files(
+    "/app/.heroku/python/lib/python3.12/site-packages/django/contrib/admin/static",
+    prefix="static/"
+)
+
+
+
+
+
+
+# application = WhiteNoise(application)
+# application.add_files(BASE_DIR / "frontend" / "dist", prefix="static/")
