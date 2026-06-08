@@ -38,11 +38,3 @@ application.add_files(
     "/app/.heroku/python/lib/python3.12/site-packages/django/contrib/admin/static",
     prefix="static/"
 )
-
-
-
-
-
-
-# application = WhiteNoise(application)
-# application.add_files(BASE_DIR / "frontend" / "dist", prefix="static/")
