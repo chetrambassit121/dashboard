@@ -26,7 +26,7 @@ export default function Navbar({content}) {
                                             boxShadow: 'none',}}>
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
-                        Data Visualization Dashboard
+                        Interactive Data Dashboard
                     </Typography>
                 </Toolbar>
             </AppBar>
