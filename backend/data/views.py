@@ -18,27 +18,59 @@ class SuperMarketSalesViewset(viewsets.ViewSet):
         return Response(serializer.data)
 
 
+# class BrancheDataViewset(viewsets.ViewSet): 
+#     permission_classes = [permissions.AllowAny]
+#     queryset = SuperMarketSales.objects.all()
+#     serializer_class = BrancheDataSerializer
+
+#     def list(self, request): 
+#         total_sum = SuperMarketSales.objects.aggregate(total_quantity=Sum('quantity'))
+#         total_quantity_value = total_sum['total_quantity']
+
+#         queryset = SuperMarketSales.objects.values('branche', 'branche__name')\
+#         .annotate(quantity=Sum('quantity'))\
+#         .annotate(percentage=Func(
+#                       (Cast(F('quantity'), FloatField())/ total_quantity_value) * 100,
+#                       Value(2), 
+#                       function='ROUND', 
+#                       output_field=FloatField()
+#                     ))
+                 
+        
+#         serializer = self.serializer_class(queryset, many=True)
+#         return Response(serializer.data)
+
+
 class BrancheDataViewset(viewsets.ViewSet): 
     permission_classes = [permissions.AllowAny]
-    queryset = SuperMarketSales.objects.all()
     serializer_class = BrancheDataSerializer
 
     def list(self, request): 
-        total_sum = SuperMarketSales.objects.aggregate(total_quantity=Sum('quantity'))
-        total_quantity_value = total_sum['total_quantity']
+        total_quantity_value = (
+            SuperMarketSales.objects.aggregate(total_quantity=Sum("quantity"))["total_quantity"] 
+            or 0
+        )
 
-        queryset = SuperMarketSales.objects.values('branche', 'branche__name')\
-        .annotate(quantity=Sum('quantity'))\
-        .annotate(percentage=Func(
-                      (Cast(F('quantity'), FloatField())/ total_quantity_value) * 100,
-                      Value(2), 
-                      function='ROUND', 
-                      output_field=FloatField()
-                    ))
-                 
-        
-        serializer = self.serializer_class(queryset, many=True)
-        return Response(serializer.data)
+        queryset = (
+            SuperMarketSales.objects
+            .values("branche", "branche__name")
+            .annotate(quantity=Sum("quantity"))
+            .order_by("branche__name")
+        )
+
+        data = []
+        for item in queryset:
+            quantity = item["quantity"] or 0
+            percentage = round((quantity / total_quantity_value) * 100, 2) if total_quantity_value else 0
+
+            data.append({
+                "id": item["branche"],
+                "label": item["branche__name"],
+                "value": quantity,
+                "percentage": percentage,
+            })
+
+        return Response(data)
     
 
 class GenderDataViewset(viewsets.ViewSet): 
